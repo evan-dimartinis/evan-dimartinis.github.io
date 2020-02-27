@@ -1,61 +1,81 @@
 .header {
-    background-color: darkslategray;
-    color: floralwhite;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2%;
+  background-color: darkslategray;
+  color: floralwhite;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2%;
 }
 
 .header img {
-    height: 150px;
-    width: 150px;
+  height: 150px;
+  width: 150px;
 }
 
 .wrapper {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    padding: 10px;
-    background-color: lawngreen;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 10px;
+  background-color: blanchedalmond;
 }
 
 .content {
-    max-width: 960px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    padding: 10px;
-    justify-content: space-around;
+  max-width: 960px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 10px;
+  justify-content: space-around;
 }
 
 .block1 {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    background-color: lawngreen;
-    width: 25%;
-    padding: 10px;
-    justify-content: space-around;
+  background-color: blanchedalmond;
+  padding: 10px;
 }
 
 .block2 {
-    background-color: lightblue;
-    width: 70%;
-    padding: 10px;
-    flex-wrap: wrap;
+  background-color: lightblue;
+  flex: 0 2 auto;
+  padding: 10px;
+  flex-wrap: wrap;
+  width: 700px;
 }
 
 .block1 p {
-    background-color: ivory;
-    padding: 3px;
-    height: min-content;
+  background-color: ivory;
+  padding: 3px;
+  height: min-content;
+  width: 200px
 }
 
 .block1 img {
-    width: 100%;
-    height: auto;
-    border: 1px solid black;
-    border-radius: 4px;
+  width: 200px;
+  height: auto;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+h1,
+h2 {
+  font-family: cursive;
+}
+
+.block2 p {
+  font-size: larger;
+}
+
+@media (max-width: 1000px) {
+  .block1 {
+    display: flex;
+    flex-direction: row;
+    flex: 1 0 auto;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .block1 img {
+    margin-right: 15px;
+  }
 }
