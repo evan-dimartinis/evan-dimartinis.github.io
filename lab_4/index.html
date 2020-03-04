@@ -36,11 +36,11 @@
         let namelen = splitname[0].length + splitname[1].length
 
         const header = document.querySelector(".header");
-        header.innerHTML = fullname + "'s" + namelen + "lab 4";
+        header.innerHTML = fullname + "'s" + "lab 4" + " " + namelen;
 
 
         let paragraph = document.querySelector(".content")
-        paragraph.innerHTML = "<p>Hello World!</p> <p>My name has "+ namelen + " "+ "characters</p> <p>The third character in my name is " + name[2].toUpperCase()+"<br>The last three characters of my last name is " + lastname.slice(-3)+ " </p>"
+        paragraph.innerHTML = "<p>Hello World!</p> <p>My name has "+ namelen + " "+ "characters</p> <p>The third character in my name is " + name[2].toUpperCase()+"<br>The last three characters of my last name are '" + lastname.slice(-3)+ "' </p>"
 
 
       }
