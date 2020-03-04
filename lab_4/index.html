@@ -28,6 +28,21 @@
       function clickMe() {
         const content = document.querySelector(".content");
         content.innerHTML = "Hello world";
+        let name = 'Evan'
+        let lastname = 'DiMartinis'
+        let fullname = 'Evan DiMartinis'
+        let splitname = fullname.split(" ")
+
+        let namelen = splitname[0].length + splitname[1].length
+
+        const header = document.querySelector(".header");
+        header.innerHTML = fullname + "'s" + namelen + "lab 4";
+
+
+        let paragraph = document.querySelector(".content")
+        paragraph.innerHTML = "<p>Hello World!</p> <p>My name has "+ namelen + " "+ "characters</p> <p>The third character in my name is " + name[2].toUpperCase()+"<br>The last three characters of my last name is " + lastname.slice(-3)+ " </p>"
+
+
       }
     </script>
   </body>
