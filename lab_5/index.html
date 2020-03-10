@@ -21,7 +21,7 @@
   <script>
     function getRandomInt(min, max) {
       min = 0;
-      max = countries.length - 1;
+      max = 242;
       return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is exclusive and the minimum is inclusive
     }
     function randomcountries() {
@@ -43,9 +43,10 @@
       console.log(randintlist)
       var usedcountries = [];
       randintlist.forEach((element) => {
-        content.innerHTML += "<li><strong>" + countries[element]["code"] + "</strong> " + countries[element]["name"] + "</li>";
+        ol.innerHTML += "<li><strong>" + countries[element]["code"] + "</strong> " + countries[element]["name"] + "</li>";
         usedcountries.push(countries[element]["name"]);
       })
+
       countries.forEach((index) => {
         if (usedcountries.includes(index["name"])===false) {
           console.log(index["name"]);
