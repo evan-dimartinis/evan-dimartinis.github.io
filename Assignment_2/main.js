@@ -5,6 +5,11 @@ const btn = document.querySelector('button');
 const overlay = document.querySelector('.overlay');
 
 /* Looping through images */
+function doit() {
+    const bool = true;
+    const test = (bool) ? "invalid" : "valid";
+    console.log(test);
+}
 
 const newImage = document.createElement('img');
 newImage.setAttribute('src', xxx);
