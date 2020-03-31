@@ -11,19 +11,11 @@
           <h1>HTML 1 Forms Lab</h1>
         </div>
         <form action="https://nameless-thicket-21836.herokuapp.com/lab" method="POST">
-            <ul>
-                <li>
-                  <label for="Name" id="label">Name</label>
-                  <input type="text" id="Name">
-                </li>
-                <li>
-                  <label for="Interests" id="label">Interests</label>
-                  <textarea id="Interests" rows="5" cols="33">Interests</textarea>
-                </li>
-                <li class="button">
-                  <input type="submit">
-                </li>
-            </ul>
+          <label for="Name">Name</label>
+          <input type="text" id="Name">
+          <label for="Interests">Interests</label>
+          <textarea id="Interests" name="Interests" rows="5" cols="33">Interests</textarea><br>
+          <button class="button" type="submit">submit</button>
         </form>
       </div>
     </div>
