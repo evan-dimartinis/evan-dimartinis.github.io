@@ -5,7 +5,7 @@ const btn = document.querySelector('button');
 const overlay = document.querySelector('.overlay');
 
 /* Looping through images */
-for (x===0; i < imgarray.length; x++) {
+for (x===1; i < imgarray.length; x++) {
     xxx = "A2images/pic" + x + ".jpg"
 }
 
