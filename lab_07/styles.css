@@ -101,6 +101,9 @@ body {
     top: 1px;
   }
 
+  /* start of lab css */
+
   #mapid {
-      height: 180px;
+      height: 480px;
+      width: 640px;
   }
