@@ -56,7 +56,7 @@ chart.render();
       fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json') // replace this with the food safety data set
         .then((data) => data.json()) // this is an "implicit return" - we're returning the results of the Fetch request to the next step.
         .then((data) => { 
-          for (i = 0; i < data.length; i++) {
+        /*  for (i = 0; i < data.length; i++) {
             for (x = 0; x < possible_results.length; x++) {
               if (possible_results[x].label == data[i].inspection_results) {
                 possible_results[x].y++;
@@ -65,7 +65,7 @@ chart.render();
                 possible_results.push({y: 1, label: data[i].inspection_results})
               }
             }
-          }
+          }*/
           
           // this is an explicit return. If I want my information to go further, I'll need to use the "return" keyword before the brackets close
           //const betterdata = data.filter((f) => f.geocoded_column_1);
