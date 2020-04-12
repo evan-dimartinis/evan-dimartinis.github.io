@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Charts Lab</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <script>
+        window.onload = function() {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	exportEnabled: true,
+	animationEnabled: true,
+	title: {
+		text: "Desktop Browser Market Share in 2016"
+	},
+	data: [{
+		type: "pie",
+		startAngle: 25,
+		toolTipContent: "<b>{label}</b>: {y}%",
+		showInLegend: "true",
+		legendText: "{label}",
+		indexLabelFontSize: 16,
+		indexLabel: "{label} - {y}%",
+		dataPoints: possible_results
+    
+    
+    /*[
+			{ y: 51.08, label: "Chrome" },
+			{ y: 27.34, label: "Internet Explorer" },
+			{ y: 10.62, label: "Firefox" },
+			{ y: 5.02, label: "Microsoft Edge" },
+			{ y: 4.07, label: "Safari" },
+			{ y: 1.22, label: "Opera" },
+			{ y: 0.44, label: "Others" }
+		]*/
+  }]
+});
+chart.render();
+
+}
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="header">Frontend Libraries: Charts Lab</div>
+        <div id="chartContainer" class="content" style="height: 300px; width: 90%">
+          <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+          <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <div class="footer">Let's eat out in the future!</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      possible_results = [{y: 0, label: "none"}];
+      fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json') // replace this with the food safety data set
+        .then((data) => data.json()) // this is an "implicit return" - we're returning the results of the Fetch request to the next step.
+        .then((data) => { 
+          for (i = 0; i < data.length; i++) {
+            for (x = 0; x < possible_results.length; x++) {
+              if (possible_results[x].label == data[i].inspection_results) {
+                possible_results[x].y++;
+                }
+              else {
+                possible_results.push({y: 1, label: data[i].inspection_results})
+              }
+            }
+          }
+          
+          // this is an explicit return. If I want my information to go further, I'll need to use the "return" keyword before the brackets close
+          //const betterdata = data.filter((f) => f.geocoded_column_1);
+          //const refined = clearEmptyData.map((m) => ({
+          //    category: m.category,
+          //    name: m.name,
+          //    latLong: m.geocoded_column_1,
+          //}))
+          console.log(possible_results);
+         // return data; // <- this will pass the data to the next "then" statement when I'm ready.
+         
+        })
+
+        /*.then((data) => {
+            return data.reduce((c, current) => {
+                if (!c[current.category]) {
+                    c[current.category] = [];
+                }
+                c[current.category].push(current);
+                return c;
+            })
+        })*/
+    </script>
+  </body>
+</html>

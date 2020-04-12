@@ -1,6 +1,17 @@
 <h1>Fam Quiplash is Here!!!</h1>
 <label>Enter your name</label><br>
 <input type="text" class="form-control" [(ngModel)]="user_name"><br>
-<label>Your new question is:</label><br>
+<label>Your new question is: ____ answer below</label><br>
 <input type="text" class="form-control" [(ngModel)]="user_answer"><br>
 <button (click)="addAnswer()" class="btn btn-primary">Submit Answer</button>
+<p>{{ success_message }}</p>
+
+<h2>Vote for last round's answers!</h2>
+<p>The last question was: _____</p>
+
+<ul>
+    <li *ngFor="let answer of old_answers; let i = index">
+        <h3>{{ answer.answer }}</h3>
+        <button (click)="voteForAnswer(answer.user)">Vote</button>
+    </li>
+</ul>
