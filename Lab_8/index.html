@@ -21,10 +21,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		legendText: "{label}",
 		indexLabelFontSize: 16,
 		indexLabel: "{label} - {y}%",
-		dataPoints: possible_results
-    
-    
-    /*[
+		dataPoints:  [
 			{ y: 51.08, label: "Chrome" },
 			{ y: 27.34, label: "Internet Explorer" },
 			{ y: 10.62, label: "Firefox" },
@@ -32,7 +29,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 			{ y: 4.07, label: "Safari" },
 			{ y: 1.22, label: "Opera" },
 			{ y: 0.44, label: "Others" }
-		]*/
+		]
   }]
 });
 chart.render();
@@ -56,20 +53,12 @@ chart.render();
       fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json') // replace this with the food safety data set
         .then((data) => data.json()) // this is an "implicit return" - we're returning the results of the Fetch request to the next step.
         .then((data) => { 
-          data.map(x => x.inspection_results)
+          data.forEach(element => {
+            element = element.inspection_results
+          })
           console.log(possible_results);
           console.log(data);
         })
-         // return data; // <- this will pass the data to the next "then" statement when I'm read
-        /*.then((data) => {
-            return data.reduce((c, current) => {
-                if (!c[current.category]) {
-                    c[current.category] = [];
-                }
-                c[current.category].push(current);
-                return c;
-            })
-        })*/
     </script>
   </body>
 </html>
